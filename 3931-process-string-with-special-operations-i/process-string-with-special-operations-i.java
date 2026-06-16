@@ -16,7 +16,7 @@ class Solution {
                     list.remove(list.size() - 1);
                 }
             }
-            else if (ch == '#' && i > 0) {
+            else if (ch == '#' ) {
                 int S= list.size();
                 for (int j = 0; j < S; j++) {
                     list.add(list.get(j));
