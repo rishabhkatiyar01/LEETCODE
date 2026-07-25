@@ -15,13 +15,29 @@
  */
 class Solution {
     public int countNodes(TreeNode root) {
-
-        if(root==null) return 0;
-
-        int lc=countNodes(root.left);
-        int rc=countNodes(root.right);
-
-        return lc+rc+1;
+        if(root==null)return 0;
+         int count=1;
+       Queue<TreeNode>q=new LinkedList<>();
+       q.offer(root);
+       
+       while(!q.isEmpty()){
+           TreeNode temp=q.poll();
+           
+           if(temp.left!=null){
+              
+               q.offer(temp.left);
+               count++;
+               
+           }
+           if(temp.right!=null){
+                 
+               q.offer(temp.right);
+               count++;
+               
+           }
+        
+       }
+       return count;
         
     }
 }
